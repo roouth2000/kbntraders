@@ -6,8 +6,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
-    "dev:watch": "nodemon src/server.js",
+    "dev": "nodemon",
+    "dev:watch": "nodemon",
     "lint": "oxlint src"
   },
   "dependencies": {

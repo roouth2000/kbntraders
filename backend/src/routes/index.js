@@ -6,6 +6,7 @@ import invoiceRoutes from './invoiceRoutes.js';
 import paymentRoutes from './paymentRoutes.js';
 import ledgerRoutes from './ledgerRoutes.js';
 import reportRoutes from './reportRoutes.js';
+import roleRoutes from './roleRoutes.js';
 import { isDbConnected } from '../config/database.js';
 
 const router = Router();
@@ -32,6 +33,7 @@ router.use('/invoices', invoiceRoutes);
 router.use('/payments', paymentRoutes);
 router.use('/ledgers', ledgerRoutes);
 router.use('/reports', reportRoutes);
+router.use('/roles', roleRoutes);
 
 export default router;
 

@@ -1,5 +1,6 @@
 import { verifyAccessToken } from '../utils/jwt.js';
 import { ApiResponse } from '../utils/response.js';
+import { roleService } from '../services/roleService.js';
 
 /**
  * Authentication Middleware: Protects endpoints via JWT Bearer Token
@@ -39,3 +40,28 @@ export function requireRole(...allowedRoles) {
   };
 }
 
+/**
+ * Permission-Based Access Control Guard
+ * Checks whether user's role has the requested permission
+ * @param  {...string} requiredPermissions
+ */
+export function requirePermission(...requiredPermissions) {
+  return (req, res, next) => {
+    if (!req.user) {
+      return ApiResponse.unauthorized(res, 'Authentication required');
+    }
+
+    const userRole = req.user.role || 'viewer';
+
+    // Check if user's role has at least one of the required permissions (or all if specified)
+    const hasAny = requiredPermissions.some((perm) => roleService.hasPermission(userRole, perm));
+    if (!hasAny) {
+      return ApiResponse.forbidden(
+        res,
+        `Forbidden: Missing required permission [${requiredPermissions.join(', ')}] for role '${userRole}'.`
+      );
+    }
+
+    next();
+  };
+}

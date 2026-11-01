@@ -45,6 +45,7 @@ kbntraders/
 │   │   │   ├── paymentService.js  # Payment vouchers & ledger balance sync
 │   │   │   ├── ledgerService.js   # Customer running statements & ledger summary
 │   │   │   ├── reportService.js   # Real-time analytics & dashboard aggregations
+│   │   │   ├── roleService.js     # RBAC roles matrix & staff management
 │   │   │   └── seedService.js     # Out-of-the-box demo data & in-memory store
 │   │   ├── controllers/
 │   │   │   ├── authController.js
@@ -53,7 +54,8 @@ kbntraders/
 │   │   │   ├── invoiceController.js
 │   │   │   ├── paymentController.js
 │   │   │   ├── ledgerController.js
-│   │   │   └── reportController.js
+│   │   │   ├── reportController.js
+│   │   │   └── roleController.js
 │   │   └── routes/
 │   │       ├── authRoutes.js
 │   │       ├── customerRoutes.js
@@ -62,6 +64,7 @@ kbntraders/
 │   │       ├── paymentRoutes.js
 │   │       ├── ledgerRoutes.js
 │   │       ├── reportRoutes.js
+│   │       ├── roleRoutes.js
 │   │       └── index.js           # Central Router mounted at /api
 │   ├── server.js                  # Root delegation entry point
 │   ├── nodemon.json               # Nodemon hot-reload configuration
@@ -79,7 +82,7 @@ kbntraders/
 │   │   │   ├── layout/            # Sidebar, TopHeader, MobileNav
 │   │   │   ├── ledgers/           # CustomerLedgerMasterView, CustomerDetailView
 │   │   │   ├── ui/                # Button, Input, Modal, Card, Badge
-│   │   │   └── views/             # ReportsView, ApiDocsView, SettingsView
+│   │   │   └── views/             # ReportsView, ApiDocsView, SettingsView, RolesPermissionsView
 │   │   ├── services/api.ts        # Typed Axios client with dual-token interceptors
 │   │   ├── store/                 # Zustand state stores
 │   │   └── index.css              # Responsive styles & mobile touch optimizations

@@ -21,6 +21,7 @@ import { CustomerLedgerMasterView } from './components/ledgers/CustomerLedgerMas
 import { ReportsView } from './components/views/ReportsView';
 import { SettingsView } from './components/views/SettingsView';
 import { ApiDocsView } from './components/views/ApiDocsView';
+import { RolesPermissionsView } from './components/views/RolesPermissionsView';
 
 // Auth & Public Pages
 import { LandingPage } from './components/landing/LandingPage';
@@ -353,6 +354,9 @@ export function App() {
 
                       {/* 6. Swagger API Documentation */}
                       <Route path="api-docs" element={<ApiDocsView />} />
+
+                      {/* 7. Roles & Permissions Governance */}
+                      <Route path="roles-permissions" element={<RolesPermissionsView />} />
 
                       {/* Default inside protected app */}
                       <Route path="*" element={<Navigate to="/dashboard" replace />} />

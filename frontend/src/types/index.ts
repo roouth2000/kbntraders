@@ -9,6 +9,7 @@ export type NavTab =
   | 'customer-ledger'
   | 'reports'
   | 'invoices'
+  | 'roles-permissions'
   | 'settings'
   | 'api-docs';
 
@@ -139,4 +140,43 @@ export interface CustomerLedgerRow {
   running_balance: number;
   type: 'opening' | 'invoice' | 'payment' | 'adjustment';
 }
+
+export interface PermissionItem {
+  key: string;
+  label: string;
+  description: string;
+}
+
+export interface PermissionModule {
+  id: string;
+  name: string;
+  description: string;
+  permissions: PermissionItem[];
+}
+
+export interface RoleDefinition {
+  key: string;
+  name: string;
+  badge: string;
+  color: string;
+  description: string;
+  isSystem: boolean;
+  permissions: string[];
+  userCount?: number;
+  totalPermissionsCount?: number;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  companyName?: string;
+  currency?: string;
+  avatar?: string;
+  isActive: boolean;
+  createdAt?: string;
+  permissions?: string[];
+}
+
 

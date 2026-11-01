@@ -8,6 +8,7 @@ import {
   Plus,
   Grid,
   X,
+  ShieldCheck,
 } from 'lucide-react';
 import { NavTab } from '../../types';
 
@@ -28,6 +29,7 @@ export function MobileNav({ currentTab, onSelectTab, onOpenNewInvoice }: MobileN
   ];
 
   const allMoreModules = [
+    { id: 'roles-permissions' as NavTab, label: 'Roles & Permissions', desc: 'RBAC access matrices & staff', icon: ShieldCheck },
     { id: 'api-docs' as NavTab, label: 'Sequelize API Docs', desc: 'Interactive API explorer', icon: FileText },
     { id: 'settings' as NavTab, label: 'Settings', desc: 'Preferences & taxes', icon: Settings },
   ];

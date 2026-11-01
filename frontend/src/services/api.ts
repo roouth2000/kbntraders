@@ -213,4 +213,32 @@ export const api = {
 
   getVarietySalesReport: (params?: { startDate?: string; endDate?: string }) =>
     apiClient.get('/reports/variety-sales', { params }),
+
+  // Roles & Permissions
+  getRoles: () =>
+    apiClient.get('/roles'),
+
+  getRole: (roleKey: string) =>
+    apiClient.get(`/roles/${roleKey}`),
+
+  getPermissionCatalog: () =>
+    apiClient.get('/roles/permissions'),
+
+  updateRolePermissions: (roleKey: string, permissions: string[]) =>
+    apiClient.put(`/roles/${roleKey}/permissions`, { permissions }),
+
+  resetRolePermissions: (roleKey: string) =>
+    apiClient.post(`/roles/${roleKey}/reset`),
+
+  getTeamMembers: () =>
+    apiClient.get('/roles/users'),
+
+  updateUserRole: (userId: string, role: string) =>
+    apiClient.put(`/roles/users/${userId}/role`, { role }),
+
+  toggleUserStatus: (userId: string, isActive: boolean) =>
+    apiClient.patch(`/roles/users/${userId}/status`, { isActive }),
+
+  createTeamMember: (data: { name: string; email: string; password?: string; role: string }) =>
+    apiClient.post('/roles/users', data),
 };

@@ -9,6 +9,7 @@ import {
   Building2,
   ChevronLeft,
   ChevronRight,
+  ShieldCheck,
 } from 'lucide-react';
 import { NavTab, User as UserType } from '../../types';
 
@@ -41,6 +42,7 @@ export function Sidebar({
   ];
 
   const supportNav = [
+    { id: 'roles-permissions' as NavTab, label: 'Roles & Permissions', icon: ShieldCheck },
     { id: 'api-docs' as NavTab, label: 'API & Swagger Docs', icon: FileText },
     { id: 'settings' as NavTab, label: 'Settings', icon: Settings },
   ];
