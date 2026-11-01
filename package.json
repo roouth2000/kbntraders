@@ -1,0 +1,26 @@
+{
+  "name": "kbntraders-suite",
+  "private": true,
+  "version": "1.0.0",
+  "description": "KBN Traders Finova Mandi Ledger & Produce Billing Suite",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "preview": "npm run preview --prefix frontend",
+    "lint": "npm run lint --prefix frontend",
+    "start": "npm run start --prefix backend",
+    "frontend:dev": "npm run dev --prefix frontend",
+    "frontend:build": "npm run build --prefix frontend",
+    "frontend:preview": "npm run preview --prefix frontend",
+    "frontend:lint": "npm run lint --prefix frontend",
+    "backend:dev": "npm run dev --prefix backend",
+    "backend:start": "npm run start --prefix backend",
+    "backend:watch": "npm run dev:watch --prefix backend"
+  }
+}
+
